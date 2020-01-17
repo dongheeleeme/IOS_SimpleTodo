@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F4B1323A23D18B7500A74EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1323923D18B7500A74EBE /* AppDelegate.swift */; };
-		F4B1323E23D18B7500A74EBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1323D23D18B7500A74EBE /* ViewController.swift */; };
 		F4B1324123D18B7500A74EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B1323F23D18B7500A74EBE /* Main.storyboard */; };
 		F4B1324323D18B7600A74EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B1324223D18B7600A74EBE /* Assets.xcassets */; };
 		F4B1324623D18B7600A74EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B1324423D18B7600A74EBE /* LaunchScreen.storyboard */; };
+		F4B1324E23D18E7E00A74EBE /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1324D23D18E7E00A74EBE /* MemoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F4B1323623D18B7500A74EBE /* IOS_SimpleTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_SimpleTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1323923D18B7500A74EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4B1323D23D18B7500A74EBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4B1324023D18B7500A74EBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4B1324223D18B7600A74EBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4B1324523D18B7600A74EBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4B1324723D18B7600A74EBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4B1324D23D18E7E00A74EBE /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,53 @@
 			isa = PBXGroup;
 			children = (
 				F4B1323923D18B7500A74EBE /* AppDelegate.swift */,
-				F4B1323D23D18B7500A74EBE /* ViewController.swift */,
-				F4B1323F23D18B7500A74EBE /* Main.storyboard */,
-				F4B1324223D18B7600A74EBE /* Assets.xcassets */,
-				F4B1324423D18B7600A74EBE /* LaunchScreen.storyboard */,
+				F4B1324F23D18F2D00A74EBE /* ViewController */,
+				F4B1325023D18F3D00A74EBE /* Model */,
+				F4B1325123D18F4100A74EBE /* Resources */,
+				F4B1325323D18FA400A74EBE /* Utility */,
 				F4B1324723D18B7600A74EBE /* Info.plist */,
 			);
 			path = IOS_SimpleTodo;
+			sourceTree = "<group>";
+		};
+		F4B1324F23D18F2D00A74EBE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4B1325223D18F5F00A74EBE /* MemoList */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F4B1325023D18F3D00A74EBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4B1325123D18F4100A74EBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4B1323F23D18B7500A74EBE /* Main.storyboard */,
+				F4B1324223D18B7600A74EBE /* Assets.xcassets */,
+				F4B1324423D18B7600A74EBE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F4B1325223D18F5F00A74EBE /* MemoList */ = {
+			isa = PBXGroup;
+			children = (
+				F4B1324D23D18E7E00A74EBE /* MemoListViewController.swift */,
+			);
+			path = MemoList;
+			sourceTree = "<group>";
+		};
+		F4B1325323D18FA400A74EBE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4B1323E23D18B7500A74EBE /* ViewController.swift in Sources */,
+				F4B1324E23D18E7E00A74EBE /* MemoListViewController.swift in Sources */,
 				F4B1323A23D18B7500A74EBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
