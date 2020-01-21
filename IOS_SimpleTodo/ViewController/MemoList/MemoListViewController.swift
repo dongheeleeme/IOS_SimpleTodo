@@ -26,7 +26,7 @@ class MemoListViewController: UIViewController {
     }
     
     @IBAction func addMemo(_ sender: Any) {
-        if let naviVC = storyboard?.instantiateViewController(withIdentifier: "MemoComposeViewController") as? UINavigationController,
+        if let naviVC = storyboard?.instantiateViewController(withIdentifier: MemoComposeViewController.reuseIdentifier) as? UINavigationController,
             let composeVC = naviVC.viewControllers.first as? MemoComposeViewController {
             
             composeVC.addHandler = { memo in
@@ -48,7 +48,7 @@ extension MemoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let memoCell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath) as? MemoCell else {
+        guard let memoCell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
             return UITableViewCell()
         }
         
