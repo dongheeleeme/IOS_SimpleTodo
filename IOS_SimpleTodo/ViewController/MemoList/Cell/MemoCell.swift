@@ -9,7 +9,9 @@
 import UIKit
 
 class MemoCell: UITableViewCell {
-
+    
+    @IBOutlet private weak var contentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,7 +20,7 @@ class MemoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure() {
-        
+    func configure(with memo: Memo) {
+        contentLabel.text = memo.content
     }
 }
