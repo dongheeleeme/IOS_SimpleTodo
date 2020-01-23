@@ -18,6 +18,7 @@ class MemoListViewController: UIViewController {
         super.viewDidLoad()
         
         initTableView()
+        loadAll()
     }
     
     private func initTableView() {
@@ -31,12 +32,41 @@ class MemoListViewController: UIViewController {
             
             composeVC.addHandler = { memo in
                 self.memos.insert(memo, at: 0)
+                self.saveAll()
                 self.tableView.reloadData()
-                print(self.memos)
             }
             
             present(naviVC, animated: true, completion: nil)
         }
+    }
+    
+    private func saveAll() {
+        
+        let data = memos.map { memo in
+            [
+                "content" : memo.content,
+                "insertDate" : memo.date
+            ]
+        }
+        
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: UserDefaultsKey.memoList)
+        userDefaults.synchronize()
+    }
+    
+    private func loadAll() {
+        
+        let userDefaults = UserDefaults.standard
+        guard let memos = userDefaults.object(forKey: UserDefaultsKey.memoList) as? [[String : Any]] else { return }
+        
+        self.memos = memos.map { memo in
+            Memo(
+                content: memo["content"] as? String ?? "",
+                date: memo["insertDate"] as? Date ?? Date()
+            )
+        }
+        
+        tableView.reloadData()
     }
 }
 

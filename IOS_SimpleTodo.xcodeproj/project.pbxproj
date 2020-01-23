@@ -11,6 +11,7 @@
 		F436FB6E23D58A57009B2009 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436FB6D23D58A57009B2009 /* MemoCell.swift */; };
 		F436FB7123D58CFA009B2009 /* MemoComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436FB7023D58CFA009B2009 /* MemoComposeViewController.swift */; };
 		F436FBA523D6AFE5009B2009 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436FBA423D6AFE5009B2009 /* Memo.swift */; };
+		F4986BAE23D8102E00AEBBA2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4986BAD23D8102E00AEBBA2 /* Constant.swift */; };
 		F4B1323A23D18B7500A74EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1323923D18B7500A74EBE /* AppDelegate.swift */; };
 		F4B1324123D18B7500A74EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B1323F23D18B7500A74EBE /* Main.storyboard */; };
 		F4B1324323D18B7600A74EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B1324223D18B7600A74EBE /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		F436FB6D23D58A57009B2009 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		F436FB7023D58CFA009B2009 /* MemoComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoComposeViewController.swift; sourceTree = "<group>"; };
 		F436FBA423D6AFE5009B2009 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		F4986BAD23D8102E00AEBBA2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F4B1323623D18B7500A74EBE /* IOS_SimpleTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_SimpleTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1323923D18B7500A74EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B1324023D18B7500A74EBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F420564923D6BD0A00BFE54F /* CommonExtension.swift */,
+				F4986BAD23D8102E00AEBBA2 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				F4B1324E23D18E7E00A74EBE /* MemoListViewController.swift in Sources */,
 				F4B1323A23D18B7500A74EBE /* AppDelegate.swift in Sources */,
 				F436FB6E23D58A57009B2009 /* MemoCell.swift in Sources */,
+				F4986BAE23D8102E00AEBBA2 /* Constant.swift in Sources */,
 				F436FB7123D58CFA009B2009 /* MemoComposeViewController.swift in Sources */,
 				F436FBA523D6AFE5009B2009 /* Memo.swift in Sources */,
 			);
