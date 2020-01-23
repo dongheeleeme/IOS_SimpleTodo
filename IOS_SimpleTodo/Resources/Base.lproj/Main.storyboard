@@ -27,16 +27,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvB-Xb-z73">
-                                                    <rect key="frame" x="16" y="11.5" width="351" height="21"/>
+                                                    <rect key="frame" x="32" y="11.5" width="319" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HvB-Xb-z73" firstAttribute="leading" secondItem="2cN-BB-8QY" secondAttribute="leading" constant="16" id="KS4-wJ-b9P"/>
+                                                <constraint firstItem="HvB-Xb-z73" firstAttribute="leading" secondItem="2cN-BB-8QY" secondAttribute="leading" constant="32" id="KS4-wJ-b9P"/>
                                                 <constraint firstItem="HvB-Xb-z73" firstAttribute="centerY" secondItem="2cN-BB-8QY" secondAttribute="centerY" id="eCp-nU-0eT"/>
-                                                <constraint firstAttribute="trailing" secondItem="HvB-Xb-z73" secondAttribute="trailing" constant="16" id="nY8-CW-Jyu"/>
+                                                <constraint firstAttribute="trailing" secondItem="HvB-Xb-z73" secondAttribute="trailing" constant="32" id="nY8-CW-Jyu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -70,6 +70,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--메모 보기-->
+        <scene sceneID="Rwz-wY-ADb">
+            <objects>
+                <viewController storyboardIdentifier="MemoDetailViewController" id="kbc-Sm-eQs" customClass="MemoDetailViewController" customModule="IOS_SimpleTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Dp-v2-KO7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wn0-3Q-Fv5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ContentCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" id="DHb-WZ-PAx" customClass="ContentCell" customModule="IOS_SimpleTodo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DHb-WZ-PAx" id="ErQ-aS-XLJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-Bv-8PF">
+                                                    <rect key="frame" x="32" y="11.5" width="350" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EdD-Bv-8PF" firstAttribute="leading" secondItem="ErQ-aS-XLJ" secondAttribute="leading" constant="32" id="ata-IN-qcK"/>
+                                                <constraint firstAttribute="trailing" secondItem="EdD-Bv-8PF" secondAttribute="trailing" constant="32" id="eCD-E6-77T"/>
+                                                <constraint firstItem="EdD-Bv-8PF" firstAttribute="centerY" secondItem="ErQ-aS-XLJ" secondAttribute="centerY" id="fNQ-wE-LCY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" id="USn-iD-B8Y" customClass="DateCell" customModule="IOS_SimpleTodo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="USn-iD-B8Y" id="v22-wS-zwm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lj-OR-waw">
+                                                    <rect key="frame" x="186" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Lj-OR-waw" firstAttribute="centerY" secondItem="v22-wS-zwm" secondAttribute="centerY" id="fnn-hK-oun"/>
+                                                <constraint firstItem="6Lj-OR-waw" firstAttribute="centerX" secondItem="v22-wS-zwm" secondAttribute="centerX" id="jsm-EP-RlR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wn0-3Q-Fv5" firstAttribute="top" secondItem="OPy-3j-AML" secondAttribute="top" id="9xP-Sc-dye"/>
+                            <constraint firstItem="wn0-3Q-Fv5" firstAttribute="leading" secondItem="OPy-3j-AML" secondAttribute="leading" id="Jfk-PR-Wp7"/>
+                            <constraint firstItem="OPy-3j-AML" firstAttribute="bottom" secondItem="wn0-3Q-Fv5" secondAttribute="bottom" id="lam-gb-xc1"/>
+                            <constraint firstItem="OPy-3j-AML" firstAttribute="trailing" secondItem="wn0-3Q-Fv5" secondAttribute="trailing" id="wAM-97-irr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OPy-3j-AML"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="메모 보기" id="Cof-si-obr">
+                        <barButtonItem key="leftBarButtonItem" image="Icon-Back" id="6LT-jE-hoB">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="pop:" destination="kbc-Sm-eQs" id="SCQ-JL-xvp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="wn0-3Q-Fv5" id="Kod-mx-ZYl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Int-8H-okx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="138"/>
         </scene>
         <!--새 메모-->
         <scene sceneID="ZCI-CE-0DS">
@@ -124,7 +206,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yQd-Ae-mh6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vAb-ET-OiF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -156,6 +238,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-Back" width="24" height="24"/>
         <image name="Icon-Cancel" width="24" height="24"/>
         <image name="Icon-Plus" width="24" height="24"/>
         <image name="Icon-Save" width="24" height="24"/>

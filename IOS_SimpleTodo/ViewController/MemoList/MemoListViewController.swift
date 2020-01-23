@@ -35,7 +35,7 @@ class MemoListViewController: UIViewController {
                 self.saveAll()
                 self.tableView.reloadData()
             }
-            
+
             present(naviVC, animated: true, completion: nil)
         }
     }
@@ -78,9 +78,7 @@ extension MemoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let memoCell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
-            return UITableViewCell()
-        }
+        guard let memoCell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else { return UITableViewCell() }
         
         memoCell.configure(with: self.memos[indexPath.row])
 
@@ -89,7 +87,16 @@ extension MemoListViewController: UITableViewDataSource {
 }
 
 extension MemoListViewController: UITableViewDelegate {
-    
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let memoDetailVC = storyboard?.instantiateViewController(withIdentifier: MemoDetailViewController.reuseIdentifier) as? MemoDetailViewController {
+                    
+            memoDetailVC.configure(memo: self.memos[indexPath.row])
+            
+            navigationController?.pushViewController(memoDetailVC, animated: true)
+        }
+    }
 }
 
 //extension UIView {
