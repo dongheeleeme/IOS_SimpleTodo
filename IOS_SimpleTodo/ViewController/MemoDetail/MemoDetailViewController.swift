@@ -9,7 +9,7 @@
 import UIKit
 
 class MemoDetailViewController: UIViewController {
-    
+
 //    enum CellType {
 //        case content, date
 //    }
@@ -29,6 +29,12 @@ class MemoDetailViewController: UIViewController {
     }
     
     @IBAction func pop(_ sender: Any) { navigationController?.popViewController(animated: true) }
+    
+    @IBAction func editMemo(_ sender: Any) {
+    }
+    
+    @IBAction func deleteMemo(_ sender: Any) {
+    }
     
     private func initTableView() {
         self.tableView.dataSource = self
