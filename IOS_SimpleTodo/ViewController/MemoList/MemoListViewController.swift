@@ -92,7 +92,7 @@ extension MemoListViewController: UITableViewDelegate {
         
         if let memoDetailVC = storyboard?.instantiateViewController(withIdentifier: MemoDetailViewController.reuseIdentifier) as? MemoDetailViewController {
                     
-            memoDetailVC.configure(memo: self.memos[indexPath.row])
+            memoDetailVC.configure(memo: self.memos[indexPath.row], indexPath: indexPath)
             
             navigationController?.pushViewController(memoDetailVC, animated: true)
         }

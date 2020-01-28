@@ -17,6 +17,7 @@ class MemoDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var memo: Memo?
+    private var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,18 @@ class MemoDetailViewController: UIViewController {
         initTableView()
     }
     
-    func configure(memo: Memo) {
+    func configure(memo: Memo, indexPath: IndexPath) {
         self.memo = memo
     }
     
     @IBAction func pop(_ sender: Any) { navigationController?.popViewController(animated: true) }
     
     @IBAction func editMemo(_ sender: Any) {
+        // pass memo into ListVC
     }
     
     @IBAction func deleteMemo(_ sender: Any) {
+        // pass indexPath into ListVC
     }
     
     private func initTableView() {
