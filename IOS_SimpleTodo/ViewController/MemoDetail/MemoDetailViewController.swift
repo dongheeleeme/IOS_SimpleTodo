@@ -10,6 +10,10 @@ import UIKit
 
 class MemoDetailViewController: UIViewController {
     
+//    enum CellType {
+//        case content, date
+//    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     private var memo: Memo?
@@ -17,7 +21,6 @@ class MemoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(memo)
         initTableView()
     }
     
@@ -36,15 +39,26 @@ class MemoDetailViewController: UIViewController {
 extension MemoDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let contentCell = tableView.dequeueReusableCell(withIdentifier: ContentCell.reuseIdentifier, for: indexPath) as? ContentCell else { return UITableViewCell() }
-        guard let dateCell = tableView.dequeueReusableCell(withIdentifier: DateCell.reuseIdentifier, for: indexPath) as? DateCell else { return UITableViewCell() }
+//        switch CellType(rawValue: indexPath.row) {
+//        case .content:
+//        case .date:
+//        }
         
-        return UITableViewCell()
+        if (indexPath.row == 0) {
+            guard let contentCell = tableView.dequeueReusableCell(withIdentifier: ContentCell.reuseIdentifier, for: indexPath) as? ContentCell else { return UITableViewCell() }
+            contentCell.configure(with: memo?.content ?? "")
+            return contentCell
+        } else {
+            guard let dateCell = tableView.dequeueReusableCell(withIdentifier: DateCell.reuseIdentifier, for: indexPath) as? DateCell else { return UITableViewCell() }
+            dateCell.configure(with: memo?.date ?? Date())
+            return dateCell
+        }
     }
 }
 
