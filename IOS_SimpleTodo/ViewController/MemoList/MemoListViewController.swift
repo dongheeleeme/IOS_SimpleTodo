@@ -41,17 +41,11 @@ class MemoListViewController: UIViewController {
     }
     
     private func saveAll() {
+        let data = memosToDicMapper(memos: self.memos)
         
-        let data = memos.map { memo in
-            [
-                "content" : memo.content,
-                "insertDate" : memo.date
-            ]
+        userDefaultTransaction { userDefaults in
+            userDefaults.set(data, forKey: UserDefaultsKey.memoList)
         }
-        
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(data, forKey: UserDefaultsKey.memoList)
-        userDefaults.synchronize()
     }
     
     private func loadAll() {
@@ -67,6 +61,21 @@ class MemoListViewController: UIViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    private func memosToDicMapper(memos: [Memo]) -> [[String : Any]] {
+        return memos.map { memo in
+            [
+                "content" : memo.content,
+                "insertDate" : memo.date
+            ]
+        }
+    }
+    
+    private func userDefaultTransaction(job: (UserDefaults) -> Void) {
+        let userDefaults = UserDefaults.standard
+        job(userDefaults)
+        userDefaults.synchronize()
     }
 }
 
@@ -91,9 +100,23 @@ extension MemoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let memoDetailVC = storyboard?.instantiateViewController(withIdentifier: MemoDetailViewController.reuseIdentifier) as? MemoDetailViewController {
-                    
             memoDetailVC.configure(memo: self.memos[indexPath.row], indexPath: indexPath)
-            
+            memoDetailVC.editHandler = { memo, indexPath in
+                self.memos[indexPath.row] = memo
+                let data = self.memosToDicMapper(memos: self.memos)
+                self.userDefaultTransaction { userDefaults in
+                    userDefaults.set(data, forKey: UserDefaultsKey.memoList)
+                }
+                self.tableView.reloadData()
+            }
+            memoDetailVC.deleteHandler = { indexPath in
+                self.memos.remove(at: indexPath.row)
+                tableView.reloadData()
+                let data = self.memosToDicMapper(memos: self.memos)
+                self.userDefaultTransaction { userDefaults in
+                    userDefaults.set(data, forKey: UserDefaultsKey.memoList)
+                }
+            }
             navigationController?.pushViewController(memoDetailVC, animated: true)
         }
     }

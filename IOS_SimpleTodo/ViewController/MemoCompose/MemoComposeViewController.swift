@@ -13,9 +13,16 @@ class MemoComposeViewController: UIViewController {
     @IBOutlet weak var contentView: UITextView!
     
     var addHandler: ((Memo) -> Void)?
+    private var memo: Memo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.text = memo?.content
+    }
+    
+    func configure(memo: Memo) {
+        self.memo = memo
     }
     
     @IBAction func dismiss(_ sender: Any) {
@@ -33,6 +40,6 @@ class MemoComposeViewController: UIViewController {
         
         let memo = Memo(content: content, date: Date())
         addHandler?(memo)
-        dismiss(dismiss(animated: true, completion: nil))
+        dismiss(animated: true, completion: nil)
     }
 }
